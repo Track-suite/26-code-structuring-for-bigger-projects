@@ -8,6 +8,16 @@ export default class Experience
 {
     constructor(canvas)
     {
+
+        // Singlton
+        if(instance)
+        {
+            return instance
+        }
+
+
+        instance = this
+
         // Global access
         window.experience = this
 
