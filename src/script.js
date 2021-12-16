@@ -1,59 +1,16 @@
-class Robot
-{
-    constructor(name,legs)
-    {
-        this.name = name
-        this.legs = legs
 
-        this.sayHi()
+import './style.css'
+import Experience from './Experience/Experience.js'
 
-        console.log(`I am ${this.name}. and I have ${this.legs} legs Thank you Creator`)
-        
-        
-    }
-    sayHi()
-    {
-        console.log(`Hello My name is ${this.name}`)
-    }
-}
+const experience = new Experience(document.querySelector('canvas.webgl'))
 
-class FlyingRobot extends Robot
-{
-    sayHi()
-    {
-        console.log(`Hello My name is ${this.name} I am a Flying Robot`)
-    }
-    takeoff()
-    {
-        console.log(`Have a good flight ${this.name}`)
-    }
-    land()
-    {
-        console.log(`Welcome Back ${this.name}`)
-    }
-}
-
-const WallE = new Robot('Wall-E',0)
-const ultron = new FlyingRobot('Ultron',2)
-const astraBoy = new FlyingRobot('Astro Boy',2)
-
-astraBoy.takeoff()
-ultron.takeoff()
-
-
-
-
-
-
-// import './style.css'
 // import * as THREE from 'three'
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 // import * as dat from 'lil-gui'
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
-// // importing another js file
-// import {oneThing} from './test';
-// console.log(oneThing)
+
+
 
 // /**
 //  * Loaders
