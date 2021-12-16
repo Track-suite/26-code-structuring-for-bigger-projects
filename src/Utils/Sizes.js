@@ -1,7 +1,10 @@
-export default class Sizes
+import EventEmitter from "./EventEmitter"
+export default class Sizes extends EventEmitter
 {
     constructor()
     {
+        super()
+        
         // Setup
         this.width = window.innerWidth
         this.height = window.innerHeight
