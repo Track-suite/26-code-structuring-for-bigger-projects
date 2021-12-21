@@ -67,5 +67,38 @@ export default class Experience
         this.renderer.update()
 
     }
+    destroy()
+    {
+        this.sizes.off('resize')
+        this.time.off('tick')
+
+        // Traverse the whole 
+        this.scene.traverse((child) =>
+        {
+            child.geometry.dispose()
+
+                // Loop through the material properties
+                for(const key in child.material)
+                {
+                    const value = child.material[key]
+
+                    // Test if there is a dispose function
+                    if(value && typeof value.dispose === 'function')
+                    {
+                        value.dispose()
+                    }
+                }
+               
+        })
+         // dispose the controls
+         this.camera.controls.dispose()
+
+         // dispose the renderer
+         this.renderer.instance.dispose()
+
+        //  dispose of the debug
+        if(this.debug.active)
+            this.debug.ui.destroy()
+    }
 
 }
